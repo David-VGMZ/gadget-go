@@ -1,11 +1,11 @@
 const CACHE_NAME = 'proyectos-pwa-v4';
 const PRECACHE_URLS = [
-  './',
-  './index.html?homescreen=v2',
-  './index.html',
-  './manifest.webmanifest',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
+  '/',
+  '/index.html?homescreen=v2',
+  '/index.html',
+  '/manifest.webmanifest',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
 ];
 
 // Instalar SW
@@ -53,7 +53,7 @@ self.addEventListener('fetch', (event) => {
 
         return resp;
       }).catch(() => {
-        if (event.request.destination === 'document') return caches.match('./index.html');
+        if (event.request.destination === 'document') return caches.match('/index.html');
         return new Response('', { status: 503, statusText: 'Offline' });
       })
     )
